@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="IdentityModel" Version="4.5.0" />
+        <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="Nut" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\mHome.Core\mHome.Core.csproj" />
+    </ItemGroup>
+
+</Project>

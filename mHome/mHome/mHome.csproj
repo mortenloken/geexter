@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <PlatformTarget>AnyCPU</PlatformTarget>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <PlatformTarget>AnyCPU</PlatformTarget>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+      <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.14.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+      <PackageReference Include="Serilog" Version="2.10.0" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="3.1.0" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="appsettings.json" />
+      <Content Include="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Resources\d649cea0-3fd4-405b-982c-1f6019b9ec22.table" />
+      <None Remove="appsettings.Pi.json" />
+      <Content Include="appsettings.Pi.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Resources\hey_man.table" />
+      <None Remove="Resources\lights_on.table" />
+      <None Remove="Resources\lights_off.table" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\mHome.Bot\mHome.Bot.csproj" />
+      <ProjectReference Include="..\mHome.Core\mHome.Core.csproj" />
+      <ProjectReference Include="..\mHome.Hue\mHome.Hue.csproj" />
+      <ProjectReference Include="..\mHome.KeywordWaker\mHome.KeywordWaker.csproj" />
+      <ProjectReference Include="..\mHome.SBanken\mHome.SBanken.csproj" />
+      <ProjectReference Include="..\mHome.Waste\mHome.Waste.csproj" />
+    </ItemGroup>
+</Project>
